@@ -126,6 +126,15 @@ products.forEach(product => {
                 <div class="size-option" onclick="selectSize('S', 'size-${product.id}', '${product.id}')">S</div>
             </div>
         `;
+    } else if (product.id === '020') {
+        // Only show S size for product 013
+        selectionHtml = `
+            <div class="size-selector" id="size-${product.id}">
+               <div class="size-option" onclick="selectSize('M', 'size-${product.id}', '${product.id}')">M</div>
+                <div class="size-option" onclick="selectSize('L', 'size-${product.id}', '${product.id}')">L</div>
+                <div class="size-option" onclick="selectSize('XL', 'size-${product.id}', '${product.id}')">XL</div>
+            </div>
+        `;
     } else if (!['014', '015', '016'].includes(product.id)) {
         // Show all sizes except for products 014, 015, and 016
         selectionHtml = `
